@@ -878,7 +878,7 @@ returnStr  += '/' + varcou.reduce(function(previousValue,currentValue){
 				CharacterShard = 10;
 				CharacterShardBonus = 0;
 						
-			}else if(GachaTimes =='五連加一'||GachaTimes =='十連'){
+			}else if(GachaTimes =='五連加一'||GachaTimes =='五連'){
 				times = 6;
 				CharacterShard = 16;
 				CharacterShardBonus = 4;
@@ -969,14 +969,14 @@ returnStr  += '/' + varcou.reduce(function(previousValue,currentValue){
 					
 					if(temp <= characterChanceSecret){
 						CharacterResult[i] = CharacterListSecret[Math.floor((Math.random() * (CharacterListSP.length)) + 0)];
-						GachaResult[i] = '\超稀有夥伴:{' +  CharacterResult[times-characterST+i]+ '}\n';//超稀有夥伴
+						GachaResult[i] = '\超稀有夥伴:{' +  CharacterResult[i]+ '}\n';//超稀有夥伴
 					}else{
 						CharacterResult[i] = CharacterListSP[Math.floor((Math.random() * (CharacterListSP.length)) + 0)];
-						GachaResult[i] = '\限定夥伴:' +  CharacterResult[times-characterST+i]+ '\n'; //限定夥伴
+						GachaResult[i] = '\限定夥伴:' +  CharacterResult[i]+ '\n'; //限定夥伴
 					}
 				}else{
 					CharacterResult[i] = CharacterList[Math.floor((Math.random() * (CharacterList.length)) + 0)];
-					GachaResult[i] = '\夥伴:' +  CharacterResult[times-characterST+i]+ '\n';
+					GachaResult[i] = '\夥伴:' +  CharacterResult[i]+ '\n';
 				}
 			}//確定夥伴
 		}//通常腳色處理	
