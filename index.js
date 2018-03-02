@@ -632,10 +632,12 @@ returnStr  += '/' + varcou.reduce(function(previousValue,currentValue){
 		var characterShardResult = 0;//總計獲得同伴碎片
 		let CharacterList = [];//腳色清單
 		let CharacterListSP = [];//限定腳色清單
+		let CharacterListSecret = [];//超稀有腳色清單
  
 		var times = 0;//抽獎次數
 		var characterChance = 0;//夥伴獲得率
 		var characterChanceSP = 0;//限定夥伴獲得率
+		var characterChanceSecret =0;//超稀有夥伴獲得率
 		var CharacterShard = 0;//夥伴碎片獲得數量
 		var CharacterShardBonus = 0;//夥伴碎片保底數量
 		var characterST = 0;//確認保底夥伴數量
@@ -683,24 +685,24 @@ returnStr  += '/' + varcou.reduce(function(previousValue,currentValue){
 
 			if(GachaTimes =='單抽'){
 				times = 1;
-				characterChance = 25;
-				characterChanceSP = 20;
+				characterChance = 20;
+				characterChanceSP = 5;
 				CharacterShard = 8;
 				CharacterShardBonus = 6;
 				
 			
 			}else if(GachaTimes =='五連加一'||GachaTimes =='五連'){
 				times = 6;
-				characterChance = 20;
-				characterChanceSP = 25;
+				characterChance = 15;
+				characterChanceSP = 5;
 				CharacterShard = 15;
 				CharacterShardBonus = 13;
 				characterST = 0;
 
 			}else if(GachaTimes =='十連加三'||GachaTimes =='十連'){
 				times = 13;
-				characterChance = 10;
-				characterChanceSP = 20;
+				characterChance = 8;
+				characterChanceSP = 2;
 				CharacterShard = 25;
 				CharacterShardBonus = 9;
 				characterST = 1;
@@ -794,7 +796,7 @@ returnStr  += '/' + varcou.reduce(function(previousValue,currentValue){
 			
 				return '\【票卷招募】必中新春限定夥伴招募 \
 					\n 使用專用招募卷入手新春限定夥伴吧!!!\
-					\n 開催時間:2/17 00:00 ~ 3/2 23:59\
+					\n 開催時間:2/17 00:00 ~ 3/4 23:59\
 					\n\
 					\n 期間限定登場:\
 					\n Sp1-賀歲的風之冒險團:\
@@ -855,23 +857,37 @@ returnStr  += '/' + varcou.reduce(function(previousValue,currentValue){
 		}*/else if(DrawPool == 1101211){
 			CharacterList.length = 5;
 			CharacterList = ['義熊','尤克特','克雷特','路卡','露'];
-			CharacterListSP.length = 6;
-			CharacterListSP = ['劍士-露','長槍手-路卡','路人-克雷特','廚師-義熊','武士-薰','冰法師-艾斯'];
+			CharacterListSP.length = 3;
+			CharacterListSP = ['路卡(回憶ver)','克雷特(回憶ver)','義熊(回憶ver)'];
+			CharacterListSecret.length = 1;
+			CharacterListSecret = ['瑟雷娜'];
+			
+			//機率皆相同
+			characterChance = 10;
+			characterChanceSP = 8;
+			characterChanceSecret =2;
+			//
 
-			if(GachaTimes =='單抽'){
+			if(GachaTimes =='首單抽'){
 				times = 1;
-				characterChance = 20;
-				characterChanceSP = 25;
 				CharacterShard = 10;
 				CharacterShardBonus = 0;
 				
-			
-			}else if(GachaTimes =='十連加一'||GachaTimes =='十連'){
-				times = 11;
-				characterChance = 10;
-				characterChanceSP = 50;
-				CharacterShard = 20;
-				CharacterShardBonus = 10;
+			}else if(GachaTimes =='單抽'){
+				times = 1;
+				CharacterShard = 10;
+				CharacterShardBonus = 0;
+						
+			}else if(GachaTimes =='五連加一'||GachaTimes =='十連'){
+				times = 6;
+				CharacterShard = 16;
+				CharacterShardBonus = 4;
+				characterST = 0;
+
+			}else if(GachaTimes =='十連加三'||GachaTimes =='十連'){
+				times = 13;
+				CharacterShard = 21;
+				CharacterShardBonus = 9;
 				characterST = 1;
 
 			}else if(GachaTimes == null){
@@ -923,10 +939,15 @@ returnStr  += '/' + varcou.reduce(function(previousValue,currentValue){
 		}
 		
 		for(var i = 0;i < characterST; i++){
-			temp = Dice(100);
-			if(temp <= characterChanceSP){
-				CharacterResult[times-characterST+i] = CharacterListSP[Math.floor((Math.random() * (CharacterListSP.length)) + 0)];
-				GachaResult[times-characterST+i] = '\[保底]限定夥伴:' +  CharacterResult[times-characterST+i]+ '\n';
+			temp = Dice(characterChance+characterChanceSP+characterChanceSecret);
+			if(temp <= characterChanceSP+characterChanceSecret){
+				if(temp <= characterChanceSecret){
+					CharacterResult[times-characterST+i] = CharacterListSecret[Math.floor((Math.random() * (CharacterListSP.length)) + 0)];
+					GachaResult[times-characterST+i] = '\[保底]超稀有夥伴:{' +  CharacterResult[times-characterST+i]+ '}\n';//超稀有夥伴
+				}else{
+					CharacterResult[times-characterST+i] = CharacterListSP[Math.floor((Math.random() * (CharacterListSP.length)) + 0)];
+					GachaResult[times-characterST+i] = '\[保底]限定夥伴:' +  CharacterResult[times-characterST+i]+ '\n'; //限定夥伴
+				}
 			}else{
 				CharacterResult[times-characterST+i] = CharacterList[Math.floor((Math.random() * (CharacterList.length)) + 0)];
 				GachaResult[times-characterST+i] = '\[保底]夥伴:' +  CharacterResult[times-characterST+i]+ '\n';
@@ -938,19 +959,24 @@ returnStr  += '/' + varcou.reduce(function(previousValue,currentValue){
 			temp = Dice(100);
 
 			let Shard = Dice(CharacterShard)+CharacterShardBonus;
-			if (temp > characterChance){
+			if (temp > characterChance+characterChanceSP+characterChanceSecret){
 				characterShardResult = characterShardResult + Shard;
 				GachaResult[i] = '\夥伴碎片X' +  Shard + '片\n';
 			}//是否抽到夥伴
-			if (temp <= characterChance) {
+			if (temp <= characterChance+characterChanceSP+characterChanceSecret) {
 					
-				temp = Dice(100);
-				if(temp <= characterChanceSP){
-					CharacterResult[i] = CharacterListSP[Math.floor((Math.random() * (CharacterListSP.length)) + 0)];
-					GachaResult[i] = '\限定夥伴:' +  CharacterResult[i]+ '\n';
+				if(temp <= characterChanceSP+characterChanceSecret){
+					
+					if(temp <= characterChanceSecret){
+						CharacterResult[times-characterST+i] = CharacterListSecret[Math.floor((Math.random() * (CharacterListSP.length)) + 0)];
+						GachaResult[times-characterST+i] = '\超稀有夥伴:{' +  CharacterResult[times-characterST+i]+ '}\n';//超稀有夥伴
+					}else{
+						CharacterResult[times-characterST+i] = CharacterListSP[Math.floor((Math.random() * (CharacterListSP.length)) + 0)];
+						GachaResult[times-characterST+i] = '\限定夥伴:' +  CharacterResult[times-characterST+i]+ '\n'; //限定夥伴
+					}
 				}else{
-					CharacterResult[i] = CharacterList[Math.floor((Math.random() * (CharacterList.length)) + 0)];
-					GachaResult[i] = '\夥伴:' +  CharacterResult[i]+ '\n';
+					CharacterResult[times-characterST+i] = CharacterList[Math.floor((Math.random() * (CharacterList.length)) + 0)];
+					GachaResult[times-characterST+i] = '\夥伴:' +  CharacterResult[times-characterST+i]+ '\n';
 				}
 			}//確定夥伴
 		}//通常腳色處理	
@@ -1827,6 +1853,8 @@ function ImportantInformation() {
 	\n 武器適性一覽表:\
 	\n https://docs.google.com/document/d/1_oUPgsk_bbkqVaYqARYdQ5pmSDYRvb4FTypZkjotJJY/edit?usp=sharing\
 	\n\
+	\n 人物介紹:\
+	\n https://docs.google.com/document/d/1rpmnsQz8q7-IS3YoYigVf9aF6ZLzC9jIR71Qen7G4mA/edit?usp=sharing\
 	\n 以上內容皆能在 文章區確認\
 	';		
 }
