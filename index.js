@@ -136,7 +136,6 @@ function parseInput(rplyToken, inputStr) {
 	////////////////////////////娛樂相關
         if (trigger.match(/空音/) != null) return randomReply() ;//空音閒談指令
 	if (trigger.match(/空空/) != null) return randomReplyShin() ;//空音閒談指令(裏)
-	if (trigger.match(/^賀歲抽籤$/) != null) return randomReplyNewYear() ;//賀歲抽籤
 	if (trigger.match(/運氣|運勢/) != null) return randomLuck(mainMsg) ; //占卜運氣        
         if (trigger.match(/flag/) != null) return BStyleFlagSCRIPTS() ;//插旗用指令
 	//塔羅牌
@@ -581,25 +580,6 @@ returnStr  += '/' + varcou.reduce(function(previousValue,currentValue){
         }
 ////////////////
 
-//////////////// 賀歲抽籤
-        function randomReplyNewYear() {
-        	let rplyArr = [
-		  
-		 	'\押金x1.5倍!!!', 
-		 	'\押金x2倍!!!', 
-		  	'\押金x2.5倍!!!', 
-		  	'\押金x3倍!!!',
-		  	'\我累了，你們慢慢打',
-		  	'\GM今天心情好，這場直接給你們100壓歲錢',
-		  	'\我不當抽籤Bot了!JOJO!!!!!',
-		  	'\押金+10',
-		  	'\押金+50',
-		  	'\押金+100',
-		  	'\莉莉艾好可愛喔莉莉艾'];
-        	return rplyArr[Math.floor((Math.random() * (rplyArr.length)) + 0)];
-        }
-////////////////
-
 
 //////////////// 寶箱狩獵
 	function BoxOpen() {
@@ -680,58 +660,77 @@ returnStr  += '/' + varcou.reduce(function(previousValue,currentValue){
 		}else if(DrawPool == 1){
 			CharacterList.length = 5;
 			CharacterList = ['義熊','尤克特','克雷特','路卡','露'];
-			CharacterListSP.length = 6;
-			CharacterListSP = ['露(新春ver)','路卡(新春ver)','克雷特(新春ver)','義熊(新春ver)','薰(新春ver)','艾斯(新春ver)'];
-
-			if(GachaTimes =='單抽'){
-				times = 1;
-				characterChance = 20;
-				characterChanceSP = 5;
-				CharacterShard = 8;
-				CharacterShardBonus = 6;
-				
+			CharacterListSP.length = 3;
+			CharacterListSP = ['路卡(回憶ver)','克雷特(回憶ver)','義熊(回憶ver)'];
+			CharacterListSecret.length = 1;
+			CharacterListSecret = ['瑟雷娜'];
 			
+			//機率皆相同
+			characterChance = 10;
+			characterChanceSP = 8;
+			characterChanceSecret =2;
+			//
+
+			if(GachaTimes =='首單抽'){
+				times = 1;
+				CharacterShard = 10;
+				CharacterShardBonus = 0;
+				
+			}else if(GachaTimes =='單抽'){
+				times = 1;
+				CharacterShard = 10;
+				CharacterShardBonus = 0;
+						
 			}else if(GachaTimes =='五連加一'||GachaTimes =='五連'){
 				times = 6;
-				characterChance = 15;
-				characterChanceSP = 5;
-				CharacterShard = 15;
-				CharacterShardBonus = 13;
+				CharacterShard = 16;
+				CharacterShardBonus = 4;
 				characterST = 0;
 
 			}else if(GachaTimes =='十連加三'||GachaTimes =='十連'){
 				times = 13;
-				characterChance = 8;
-				characterChanceSP = 2;
-				CharacterShard = 25;
+				CharacterShard = 21;
 				CharacterShardBonus = 9;
 				characterST = 1;
 
 			}else if(GachaTimes == null){
 				
-				return '\【限定招募】新春賀歲的風之冒險團期間限定招募 \
-					\n 趁現在入手新春限定夥伴吧!!!\
-					\n 開催時間:2/17 00:00 ~ 3/2 23:59\
+				return '\【限定招募】過往回憶的夥伴們(前篇) \
+					\n 透過特別招募，結交回憶中可靠的夥伴們吧！\
+					\n 開催時間:3/10 00:00 ~ 3/31 23:59\
 					\n\
 					\n 期間限定登場:\
-					\n Sp1-賀歲的風之冒險團:\
-					\n <我不是年獸啊！>路卡\
-					\n <翠花劍士>露\
-					\n <春宴神廚>義熊\
-					\n <引導盛宴的武者>薰\
-					\n <賀歲路人>克雷特\
-					\n <春之霜>艾斯\
+					\n Sp2-1 路卡的梅里歐斯系列(前篇):\
+					\n <黃金之泉的追求者>路卡\
+					\n <傳說蘿莉的追求者>克雷特\
+					\n <興趣的追求者>義熊\
+					\n\
+					\n !!!超稀有限定登場:!!!\
+					\n {鋒芒盡藏}瑟蕾娜\
 					\n\
 					\n 還可以招募到以下夥伴系列:\
 					\n\
-					\n 001起始英雄系列 \
+					\n 001起始英雄系列(共五名) \
+					\n\
+					\n 命中機率(不論用何種招募，機率都相同):\
+					\n 夥伴碎片:80%\
+					\n 通常夥伴:10%\
+					\n 限定夥伴:8%\
+					\n 超稀有:2%\
+					\n\
+					\n 保底夥伴命中機率(當招募內容有保底時，該保底夥伴出現機率):\
+					\n 通常夥伴:50%\
+					\n 限定夥伴:40%\
+					\n 超稀有:10%\
 					\n\
 					\n 提供招募方式：\
-					\n 單抽 5顆奇蹟石(20%出現夥伴，5%機率出現期間限定夥伴，75%獲得7~14個夥伴碎片)\
+					\n [首次限定] 首單抽 無需奇蹟石(夥伴碎片量:1~10)[每名玩家限定一次]\
 					\n\
-					\n 五連加一(五連) 25顆奇蹟石(15%出現夥伴，5%機率出現期間限定夥伴，80%獲得14~28個夥伴碎片)\
+					\n 單抽 5顆奇蹟石(夥伴碎片量:1~10)\
 					\n\
-					\n 十連加三(十連) 50顆奇蹟石(必定出現一名夥伴，必定出現的夥伴有20%會是限定夥伴，其餘有8%出現夥伴，2%機率出現期間限定夥伴，90%獲得10~35個夥伴碎片)\
+					\n 五連加一(五連) 25顆奇蹟石(夥伴碎片量:5~20)\
+					\n\
+					\n 十連加三(十連) 50顆奇蹟石(保底一名夥伴，夥伴碎片量:10~40)\
 					\n\
 					\n 想要招募的話，請輸入 [招募 1 招募方式] \
 				';
@@ -902,7 +901,7 @@ returnStr  += '/' + varcou.reduce(function(previousValue,currentValue){
 			return '\【招募目錄】目前的招募一覽表 \
 				\n\
 				\n  0 【新手招募(首抽)】 \
-				\n  1 【限定招募】新春賀歲的風之冒險團期間限定招募(NEW) \
+				\n  1 【限定招募】過往回憶的夥伴們(前篇)(NEW) \
 				\n  2 【通常奇蹟石招募】 \
 				\n  3 【票卷招募】必中新春限定夥伴招募(NEW) \
 				\n\
@@ -916,7 +915,7 @@ returnStr  += '/' + varcou.reduce(function(previousValue,currentValue){
 				\n【招募目錄】目前的招募一覽表 \
 				\n\
 				\n  0 【新手招募(首抽)】 \
-				\n  1 【限定招募】新春賀歲的風之冒險團期間限定招募(NEW) \
+				\n  1 【限定招募】過往回憶的夥伴們(前篇)(NEW) \
 				\n  2 【通常奇蹟石招募】 \
 				\n  3 【票卷招募】必中新春限定夥伴招募(NEW) \
 				\n\
@@ -1038,38 +1037,39 @@ returnStr  += '/' + varcou.reduce(function(previousValue,currentValue){
 			
 		}else if(InformationN == 1){
 			
-			return '\【慶祝】 新春系列活動 \
-				\n 詳細請確認:https://docs.google.com/document/d/10OZUIY5VzcSp7HMjrx8sIoDVTwnUOoWsNt2g7NVXXzY/edit?usp=sharing\
+			return '\【預告】 三月系列活動 \
+				\n 詳細請確認:https://docs.google.com/document/d/1vxUMTrVXpnYK7_My9aO8Ih2tA-aEDc3UHMLBbjkLVlE/edit?usp=sharing\
 				';
 			
 		}else if(InformationN == 2){
 			
 			return '\【更新】 本次更新介紹 \
 				\n 1.BOT維護:\
-				\n   (1)追加「賀歲抽籤」功能\
-				\n   (2)修正招募碎片數不符\
+				\n   (1)刪除「賀歲抽籤」\
+				\n   (2)改善招募系統\
+				\n   (3)重要資訊處追加「人物介紹」\
 				';
 			
 		}else if(InformationN == 3){
 			
 			return '\【補償】 眾多補償 \
 				\n\
-				\n1.壓歲錢不夠補償:\
-				\n  因個人有點窮準備的壓歲錢不夠，將贈與全體玩家「奇蹟石x1」作為補償\
+				\n1.更新延遲補償:\
+				\n  因個人生病，導致更新遲緩，將贈與全體玩家「奇蹟石x5」作為補償\
 				\n\
+				\n2.技能書配送錯誤補償:\
+				\n  因個人生病，導致2/26號的周一技能書配送成周二技能書，將贈與全體玩家「星期一頂級寶箱(道具)」作為補償\
 				\n\
-				\n 以上補償將在2018/2/17 00:00 開始發放\
+				\n 以上補償將在2018/3/3 02:00 開始發放\
 				';
 			
 		}else if(InformationN == 4){
 			
-			return '\【活動】恭喜發財紅包拿來!壓歲錢狩獵!? \
+			return '\【活動預告】劇情活動-路卡與梅里歐斯的回憶(前篇) \
 				\n\
-				\n 開催時間:2/17 00:00~3/2 23:59\
-				\n 說明:進行紅包對戰，奪取壓歲錢，換取大量獎勵吧!!!\
-				\n 詳細請確認:https://docs.google.com/document/d/182LNmpAEGlz3c4I9aLphM35ckecIMCOtKXM7WXGLayY/edit?usp=sharing\
-				\n\
-				\n 壓歲錢紀錄區:https://docs.google.com/spreadsheets/d/1dJU7vXRUipNf-r4r2_I7C_emVwc7qtSn6qky_8L3jl4/edit?usp=sharing\
+				\n 開催時間:3/15 00:00~3/31 23:59\
+				\n 說明: 以類似於主線任務的形式進行，通過關卡後就能取得特別獎勵！\
+				\n 詳細請輸入 活動 進行確認\
 				';
 			
 		}else if(InformationN == null){
@@ -1077,10 +1077,10 @@ returnStr  += '/' + varcou.reduce(function(previousValue,currentValue){
 			return '\【公告目錄】目前遊戲中的公告一覽表 \
 				\n\
 				\n  0 【重要】 先行測試2(公開測試) 正式開始!\
-				\n  1 【慶祝】 新春系列活動(NEW)\
+				\n  1 【預告】 三月系列活動(NEW)\
 				\n  2 【更新】 本次更新介紹(NEW)\
 				\n  3 【補償】 眾多補償(NEW)\
-				\n  4 【活動】恭喜發財紅包拿來!壓歲錢狩獵!?(NEW)\
+				\n  4 【活動預告】劇情活動-路卡與梅里歐斯的回憶(前篇)(NEW)\
 				\n\
 				\n 如果想看詳細公告內容，請輸入 [公告 公告編號] \
 				';
@@ -1092,10 +1092,10 @@ returnStr  += '/' + varcou.reduce(function(previousValue,currentValue){
 				\n【公告目錄】目前遊戲中的公告一覽表 \
 				\n\
 				\n  0 【重要】 先行測試2(公開測試) 正式開始!\
-				\n  1 【慶祝】 新春系列活動(NEW)\
+				\n  1 【預告】 三月系列活動(NEW)\
 				\n  2 【更新】 本次更新介紹(NEW)\
 				\n  3 【補償】 眾多補償(NEW)\
-				\n  4 【活動】恭喜發財紅包拿來!壓歲錢狩獵!?(NEW)\
+				\n  4 【活動預告】劇情活動-路卡與梅里歐斯的回憶(前篇)(NEW)\
 				\n\
 				\n 如果想看詳細公告內容，請輸入 [公告 公告編號] \
 				';
@@ -1535,20 +1535,25 @@ returnStr  += '/' + varcou.reduce(function(previousValue,currentValue){
 			
 		}else if(EventN == 1){
 			
-				return '\【活動】恭喜發財紅包拿來!壓歲錢狩獵!? \
+				return '\【活動預告】劇情活動-路卡與梅里歐斯的回憶(前篇) \
 				\n\
-				\n 開催時間:2/17 00:00~3/2 23:59\
-				\n 說明:進行紅包對戰，奪取壓歲錢，換取大量獎勵吧!!!\
-				\n 詳細請確認:https://docs.google.com/document/d/182LNmpAEGlz3c4I9aLphM35ckecIMCOtKXM7WXGLayY/edit?usp=sharing\
+				\n 開催時間:3/15 00:00~3/31 23:59\
+				\n 故事:\
+				\n     這是三年前，路卡曾經為了找到能實現任何願望的「黃金之泉」，所發生的故事\
 				\n\
-				\n 壓歲錢紀錄區:https://docs.google.com/spreadsheets/d/1dJU7vXRUipNf-r4r2_I7C_emVwc7qtSn6qky_8L3jl4/edit?usp=sharing\
+				\n     對路卡而言，那是與「她」第一次相遇的，十分重要的故事\
+				\n\
+				\n 活動方式:\
+				\n     以類似於主線任務的形式進行，輸入 活動 確認劇情關卡進度，之後向GM申請挑戰劇情任務，過關後就能取得特別獎勵！\
+				\n\
+				\n     一共六個關卡，全部完成的話，總計可以獲得50顆奇蹟石的獎勵！\
 				';
 		}else if(EventN == null){
 			
 			return '\【活動目錄】目前開催中的活動一覽表 \
 				\n\
 				\n  0 【重要】 先行測試二 不刪擋公測中\
-				\n  1 【活動】恭喜發財紅包拿來!壓歲錢狩獵!?\
+				\n  1 【活動預告】劇情活動-路卡與梅里歐斯的回憶(前篇)\
 				\n\
 				\n 如果想看詳細活動內容，請輸入 [活動 活動編號] \
 				';
@@ -1560,7 +1565,7 @@ returnStr  += '/' + varcou.reduce(function(previousValue,currentValue){
 				\n【活動目錄】目前開催中的活動一覽表 \
 				\n\
 				\n  0 【重要】 先行測試二 不刪擋公測中\
-				\n  1 【活動】恭喜發財紅包拿來!壓歲錢狩獵!?\
+				\n  1 【活動預告】劇情活動-路卡與梅里歐斯的回憶(前篇)\
 				\n\
 				\n 如果想看詳細活動內容，請輸入 [活動 活動編號] \
 				';
@@ -1879,9 +1884,15 @@ function GameSave() {
 
 //////////////// 
 
-//////////////// 系統幫助
+//////////////// 系統更新
 function UpdateLog() {
 	return '\【更新紀錄】 遊戲發展史(誤)\
+		\n2018/3/3:\
+		\n 1.BOT維護:\
+		\n   (1)刪除「賀歲抽籤」\
+		\n   (2)改善招募系統\
+		\n   (3)重要資訊處追加「人物介紹」\
+		\n\
 		\n2018/2/9:\
 		\n 1.技能變動\
 		\n   (1)冰獄彈:冰寒標記改為60%賦予\
