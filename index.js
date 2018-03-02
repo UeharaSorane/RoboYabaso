@@ -942,7 +942,7 @@ returnStr  += '/' + varcou.reduce(function(previousValue,currentValue){
 			temp = Dice(characterChance+characterChanceSP+characterChanceSecret);
 			if(temp <= characterChanceSP+characterChanceSecret){
 				if(temp <= characterChanceSecret){
-					CharacterResult[times-characterST+i] = CharacterListSecret[Math.floor((Math.random() * (CharacterListSP.length)) + 0)];
+					CharacterResult[times-characterST+i] = CharacterListSecret[Math.floor((Math.random() * (CharacterListSecret.length)) + 0)];
 					GachaResult[times-characterST+i] = '\[保底]超稀有夥伴:{' +  CharacterResult[times-characterST+i]+ '}\n';//超稀有夥伴
 				}else{
 					CharacterResult[times-characterST+i] = CharacterListSP[Math.floor((Math.random() * (CharacterListSP.length)) + 0)];
@@ -968,7 +968,7 @@ returnStr  += '/' + varcou.reduce(function(previousValue,currentValue){
 				if(temp <= characterChanceSP+characterChanceSecret){
 					
 					if(temp <= characterChanceSecret){
-						CharacterResult[i] = CharacterListSecret[Math.floor((Math.random() * (CharacterListSP.length)) + 0)];
+						CharacterResult[i] = CharacterListSecret[Math.floor((Math.random() * (CharacterListSecret.length)) + 0)];
 						GachaResult[i] = '\超稀有夥伴:{' +  CharacterResult[i]+ '}\n';//超稀有夥伴
 					}else{
 						CharacterResult[i] = CharacterListSP[Math.floor((Math.random() * (CharacterListSP.length)) + 0)];
