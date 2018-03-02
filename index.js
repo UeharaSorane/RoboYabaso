@@ -968,15 +968,15 @@ returnStr  += '/' + varcou.reduce(function(previousValue,currentValue){
 				if(temp <= characterChanceSP+characterChanceSecret){
 					
 					if(temp <= characterChanceSecret){
-						CharacterResult[times-characterST+i] = CharacterListSecret[Math.floor((Math.random() * (CharacterListSP.length)) + 0)];
-						GachaResult[times-characterST+i] = '\超稀有夥伴:{' +  CharacterResult[times-characterST+i]+ '}\n';//超稀有夥伴
+						CharacterResult[i] = CharacterListSecret[Math.floor((Math.random() * (CharacterListSP.length)) + 0)];
+						GachaResult[i] = '\超稀有夥伴:{' +  CharacterResult[times-characterST+i]+ '}\n';//超稀有夥伴
 					}else{
-						CharacterResult[times-characterST+i] = CharacterListSP[Math.floor((Math.random() * (CharacterListSP.length)) + 0)];
-						GachaResult[times-characterST+i] = '\限定夥伴:' +  CharacterResult[times-characterST+i]+ '\n'; //限定夥伴
+						CharacterResult[i] = CharacterListSP[Math.floor((Math.random() * (CharacterListSP.length)) + 0)];
+						GachaResult[i] = '\限定夥伴:' +  CharacterResult[times-characterST+i]+ '\n'; //限定夥伴
 					}
 				}else{
-					CharacterResult[times-characterST+i] = CharacterList[Math.floor((Math.random() * (CharacterList.length)) + 0)];
-					GachaResult[times-characterST+i] = '\夥伴:' +  CharacterResult[times-characterST+i]+ '\n';
+					CharacterResult[i] = CharacterList[Math.floor((Math.random() * (CharacterList.length)) + 0)];
+					GachaResult[i] = '\夥伴:' +  CharacterResult[times-characterST+i]+ '\n';
 				}
 			}//確定夥伴
 		}//通常腳色處理	
