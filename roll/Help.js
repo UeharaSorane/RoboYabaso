@@ -3,7 +3,7 @@ var funny = require('./funny.js');
 var rply ={type : 'text'}; //type是必需的,但可以更改
 
 //////////////// 系統幫助
-function Help() {
+function main() {
 	rply.text =  funny.randomReply() + '\n' + '\
 	【梅里歐斯的冒險者專用BOT】v1.00 \
 	\n --傷害骰(a XdY+b)--\
@@ -32,7 +32,15 @@ function Help() {
 	\n 占卜運氣功能 字句中包括運氣即可\
 	\n 塔羅牌占卜 塔羅/大十字塔羅/每日塔羅牌/時間tarot 等關键字可啓動\
 	\n 死亡FLAG：句子裡出現 Flag/flag 就能讓你輕鬆插旗\
-	\n 如果呼叫空音的名子...好像會有事情發生？';		
+	\n 如果呼叫空音的名子...好像會有事情發生？';
+	
+	return rply;
 }
 
-//////////////// 
+////////////////
+
+module.exports = {
+	main
+};
+
+
