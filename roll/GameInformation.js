@@ -22,7 +22,7 @@ function main(InformationN) {
 			    \n 接下來的冒險，還請各位多關照\
 			    \n        GM團\'
 
-	}
+	};
 	return rply;
 	
 }
