@@ -82,5 +82,5 @@ function main(InformationN) {
 
 
 module.exports = {
-	GameInformation:main
+	main
 };
