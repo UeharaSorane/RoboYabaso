@@ -3,7 +3,7 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 
 //////////////// ccb功能(機率計算)   
 function ccb(chack,text){
-	let temp = Dice(100);
+	let temp = rollbase.Dice(100);
 
 	if (text == null ) {
 		if (temp == 100) rply.text = 'ccb<=' + chack  + ' ' + temp + ' → 糟了！大失敗！';
@@ -25,36 +25,35 @@ function ccb(chack,text){
 //////////////// xBy
 function xBy(triggermsg ,text01, text02) {
 
-let returnStr = '(' + triggermsg +')';
-let match = /^(\d+)(B)(\d+)$/i.exec(triggermsg);  //判斷式  [0]3B8,[1]3,[2]B,[3]8
-let varcou =  new Array();
-let varsu = 0;
-for (var i = 0; i < Number(match[1]); i++)	
-	{
-             varcou[i] =  Dice(match[3]);
+	let returnStr = '(' + triggermsg +')';
+	let match = /^(\d+)(B)(\d+)$/i.exec(triggermsg);  //判斷式  [0]3B8,[1]3,[2]B,[3]8
+	let varcou =  new Array();
+	let varsu = 0;
+	for (var i = 0; i < Number(match[1]); i++){
+		varcou[i] =  rollbase.Dice(match[3]);
 	}
-varcou.sort(sortNumber);
-//(5B7>6) → 7,5,6,4,4 → 成功数1
+	varcou.sort(rollbase.sortNumber);
+	//(5B7>6) → 7,5,6,4,4 → 成功数1
 
-if(isNaN(text01) ==false &&Number(text01) <= Number(match[3]))
-{
-for (let i = 0; i < Number(match[1]); i++)	
-	{
-             if(Number(varcou[i])>=Number(text01)) varsu++;        
+	if(isNaN(text01) ==false &&Number(text01) <= Number(match[3])){
+		for (let i = 0; i < Number(match[1]); i++){
+			
+			if(Number(varcou[i])>=Number(text01)) varsu++; 
+			
+		}
+		
+		if (text02 ==undefined) text02 ='';
+
+		returnStr+= ' → ' + varcou + ' → 成功數'+varsu + ' ' +text02 ;
+
+	}else{
+		if (text01 ==undefined) text01 ='';
+		returnStr+=  ' → ' + varcou + ' ' +text01 ;
+
 	}
-	if (text02 ==undefined) text02 ='';
 
-    returnStr+= ' → ' + varcou + ' → 成功數'+varsu + ' ' +text02 ;
-	
-}
-else{
-	if (text01 ==undefined) text01 ='';
-	returnStr+=  ' → ' + varcou + ' ' +text01 ;
-
-	}
-	
-
-return returnStr;
+	rply.text = returnStr;
+	return rply;
 }
 ////////////////
 
@@ -75,15 +74,18 @@ function xUy(triggermsg ,text01, text02, text03) {
 	let varcoufanl =  new Array();
 	let varcounew =  new Array();
 	var varsu = 0;
-	if (text01<=2) { return  '加骰最少比2高'; }
+	if (text01<=2){
+		rply.text = '加骰最少比2高';
+		return rply;
+	}
 
 	for (var i = 0; i < Number(match[1]); i++){
-		varcou[i] =  Dice(match[3]);
+		varcou[i] =  rollbase.Dice(match[3]);
 		varcounew[i] = varcou[i];
 		varcouloop[i] = varcounew[i];
 		
 		for(;varcounew[i]>=text01;){
-			varcounew[i] =Dice(match[3]);
+			varcounew[i] =rollbase.Dice(match[3]);
 			varcouloop[i] += ', ' +varcounew[i];
 			varcou[i] += varcounew[i];
 		}
@@ -120,7 +122,8 @@ function xUy(triggermsg ,text01, text02, text03) {
 		return previousValue + currentValue;} ) +'(最大/合計)';
 	}
 	
-	return returnStr;
+	rply.text = returnStr;
+	return rply;
 	
 }
 ////////////////
