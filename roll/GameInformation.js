@@ -96,7 +96,7 @@ function main(InformationN) {
 				\n 如果想看詳細公告內容，請輸入 [公告 公告編號] \"
 			};
 
-	}
+	};
 		
 	return rply;
 	
