@@ -24,8 +24,6 @@ function main(InformationN) {
 				    \n        GM團\"
 
 		};
-
-
 	}else if(InformationN == 1){
 
 		rply = {
