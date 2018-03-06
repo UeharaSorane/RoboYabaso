@@ -26,7 +26,7 @@ function parseInput(rplyToken, inputStr) {
 	
 	///////////////////////////普通ROLL擲骰判定在此        
         if (inputStr.match(/\w/)!=null && inputStr.toLowerCase().match(/\d+d+\d/)!=null) {
-          return export.rollbase.nomalDiceRoller(inputStr,mainMsg[0],mainMsg[1],mainMsg[2]);
+          return exports.rollbase.nomalDiceRoller(inputStr,mainMsg[0],mainMsg[1],mainMsg[2]);
         }
 	
 	////////////////////////////情報相關
