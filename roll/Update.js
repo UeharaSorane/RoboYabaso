@@ -70,5 +70,5 @@ function UpdateLog() {
 ////////////////
 module.exports = {
 	UpdateLog
-}
+};
 
