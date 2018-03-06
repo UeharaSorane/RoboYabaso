@@ -36,17 +36,17 @@ function parseInput(rplyToken, inputStr) {
 	////////////////////////////戰鬥相關
 	//ccb指令
 	if (trigger.match(/^ccb$/)!= null && mainMsg[1]<=1000 ){
-		if (trigger == 'ccb'&& mainMsg[1]<=99) return export.battle.ccb(mainMsg[1],mainMsg[2]);
+		if (trigger == 'ccb'&& mainMsg[1]<=99) return exports.battle.ccb(mainMsg[1],mainMsg[2]);
         }
 	//xBy>A 指令開始於此
 	if (trigger.match(/^(\d+)(b)(\d+)$/i)!= null)
 	{        
-		return export.battle.xBy(trigger,mainMsg[1],mainMsg[2]);
+		return exports.battle.xBy(trigger,mainMsg[1],mainMsg[2]);
 	}
 	//xUy 指令開始於此	
 	if (trigger.match(/^(\d+)(u)(\d+)$/i)!= null && isNaN(mainMsg[1])== false)
 	{        
-		return export.battle.xUy(trigger,mainMsg[1],mainMsg[2],mainMsg[3]);
+		return exports.battle.xUy(trigger,mainMsg[1],mainMsg[2],mainMsg[3]);
 	}
 	
 	
