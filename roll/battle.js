@@ -13,7 +13,7 @@ function ccb(chack,text){
 	}else{
 		if (temp == 100) rply.text = text + ': ccb<=' + chack + ' ' + temp + ' → 糟了！大失敗！';
 		if (temp == 1) rply.text = text + ': ccb>=' + chack + ' ' + temp + ' → 太棒了！大成功！';
-		f (temp <= chack) rply.text = text + ': ccb>=' + chack + ' ' + temp + ' → 很好！成功了！';
+		if (temp <= chack) rply.text = text + ': ccb>=' + chack + ' ' + temp + ' → 很好！成功了！';
 		else rply.text = text + ': ccb>=' + chack + ' ' + temp + ' → 可惜！失敗了！';
 	}
 	
