@@ -115,8 +115,44 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
         }
 ////////////////
 
+////////////////運勢抽籤
+function randomLuck(TEXT) {
+	let rplyArr = ['超吉','超級上吉','大吉','吉','中吉','小吉','吉','小吉','吉','吉','中吉','吉','中吉','吉','中吉','小吉','末吉','吉','中吉','小吉','末吉','中吉','小吉','小吉','吉','小吉','末吉','中吉','小吉','凶','小凶','沒凶','大凶','很凶','你不要知道比較好呢','命運在手中,何必問我'];
+	rply.text = TEXT[0] + ' ： ' + rplyArr[Math.floor((Math.random() * (rplyArr.length)) + 0)];
+	return rply;
+}
+////////////////
+
+////////////////////////////////////////
+//////////////// choice 及SORT
+////////////////////////////////////////
+function choice(input,str) {
+	let a = input.replace(str[0], '').match(/\S+/ig);
+	rply.text = str[0] + '['+ a + '] → ' + a[rollbase.Dice(a.length)-1];
+	return rply;
+}
+
+ function SortIt(input,mainMsg) {	
+ 
+ 	let a = input.replace(mainMsg[0], '').match(/\S+/ig);
+	for (var i = a.length-1; i >=0; i--) {
+ 
+	var randomIndex = Math.floor(Math.random()*(i+1));
+	var itemAtIndex = a[randomIndex];
+	a[randomIndex] = a[i];
+	a[i] = itemAtIndex;
+	}
+	rply.text = mainMsg[0] + ' → ['+ a + ']' ;
+	return rply;
+ }
+
+
 module.exports = {
-  BStyleFlagSCRIPTS,
-  randomReply,
-  randomReplyShin
+	BStyleFlagSCRIPTS,
+	randomReply,
+	randomReplyShin,
+	randomLuck,
+	SortIt,
+	choice
+	
 };
