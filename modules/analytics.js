@@ -52,7 +52,7 @@ function parseInput(rplyToken, inputStr) {
 	
 	////////////////////////////服務相關
 	if (trigger.match(/^寶箱$|^開寶箱$/) != null) return exports.BoxOpen.main() ;//寶箱狩獵指令
-	if (trigger.match(/^祈願$/) != null) return exports.LoginBonus.main() ;//每日登入指令
+	if (trigger.match(/^祈願$/) != null) return exports.LoginBonus.LoginBonus() ;//每日登入指令
 	if (trigger.match(/^help$|^幫助$/)!= null ) return exports.Help.Help();//幫助頁面
 	if (trigger.match(/^教學$|^新手教學$/)!= null ) return exports.tutorial.main(mainMsg[1]);//新手教學頁面
 	if (trigger.match(/^重要資訊處$/)!= null ) return exports.Important.ImportantInformation();//重要資訊處
