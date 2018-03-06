@@ -51,9 +51,12 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 					\n\
 					\n 想要招募的話，請輸入 [招募 0 招募方式] ';
 				
+				return rply;
+				
 			  }else{
 				rply.text = '本招募無法使用' + GachaTimes +'招募喔\n 如果想看本招募詳細內容，請輸入 [招募 ' + DrawPool + ']';
-				}
+				return rply;	
+			  	}
 		}else if(DrawPool == 1){
 			CharacterList.length = 5;
 			CharacterList = ['義熊','尤克特','克雷特','路卡','露'];
@@ -130,8 +133,10 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 					\n 十連加三(十連) 50顆奇蹟石(保底一名夥伴，夥伴碎片量:10~40)\
 					\n\
 					\n 想要招募的話，請輸入 [招募 1 招募方式] ';
+					return rply;
 			  }else{
 				rply.text = '本招募無法使用' + GachaTimes +'招募喔';
+				return rply;
 				}
 		}else if(DrawPool == 2){
 			CharacterList.length = 5;
@@ -169,9 +174,10 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 					\n 十連加一(十連) 50顆奇蹟石(必定出現一名夥伴，其餘有10%出現夥伴，90%獲得10~30個夥伴碎片)\
 					\n\
 					\n 想要招募的話，請輸入 [招募 2 招募方式]';
-				
+					return rply;
 			  }else{
 				rply.text = '本招募無法使用' + GachaTimes +'招募喔\n 如果想看本招募詳細內容，請輸入 [招募 ' + DrawPool + ']';
+				return rply;
 				}
 		}else if(DrawPool == 3){
 			CharacterList.length = 6;
@@ -207,9 +213,11 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 					\n 單抽 必中新春限定夥伴招募招募卷x1(必定獲得夥伴)\
 					\n\
 					\n 想要招募的話，請輸入 [招募 3 招募方式]';
+					return rply;
 				
 			  }else{
 				rply.text = '本招募無法使用' + GachaTimes +'招募喔\n 如果想看本招募詳細內容，請輸入 [招募 ' + DrawPool + ']';
+				return rply;
 				}
 		}/*else if(DrawPool == 2){
 			CharacterList.length = 6;
@@ -241,9 +249,11 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 					\n 單抽 事前登入專用招募卷x1(必定獲得夥伴)\
 					\n\
 					\n 想要招募的話，請輸入 [招募 2 招募方式] ';
+					return rply;
 				
 			  }else{
 				rply.text = '本招募無法使用' + GachaTimes +'招募喔\n 如果想看本招募詳細內容，請輸入 [招募 ' + DrawPool + ']';
+				return rply;
 				}
 		}*/else if(DrawPool == 1101211){
 			CharacterList.length = 5;
@@ -284,8 +294,10 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 			}else if(GachaTimes == null){
 				
 				rply.text = '【測試招募】GM系統測試專用招募';
+				return rply;
 			  }else{
 				rply.text = '本招募無法使用' + GachaTimes +'招募喔';
+				return rply;
 				}
 		}else if(DrawPool == null){
 			
@@ -297,6 +309,7 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 				\n  3 【票卷招募】必中新春限定夥伴招募(NEW) \
 				\n\
 				\n 如果想看詳細招募內容，請輸入 [招募 招募編號]';
+				return rply;
 			
 		}else{
 			
@@ -310,6 +323,7 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 				\n  3 【票卷招募】必中新春限定夥伴招募(NEW) \
 				\n\
 				\n 如果想看詳細招募內容，請輸入 [招募 招募編號]';
+				return rply;
 			
 		}
 		
