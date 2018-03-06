@@ -179,46 +179,6 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 				rply.text = '本招募無法使用' + GachaTimes +'招募喔\n 如果想看本招募詳細內容，請輸入 [招募 ' + DrawPool + ']';
 				return rply;
 				}
-		}else if(DrawPool == 3){
-			CharacterList.length = 6;
-			CharacterList = ['露(新春ver)','路卡(新春ver)','克雷特(新春ver)','義熊(新春ver)','薰(新春ver)','艾斯(新春ver)'];
-			CharacterListSP.length = 0;
-			CharacterListSP = [];
-
-			if(GachaTimes =='單抽'){
-				times = 1;
-				characterChance = 100;
-				characterChanceSP = 0;
-				CharacterShard = 0;
-				CharacterShardBonus = 0;
-	
-			}else if(GachaTimes == null){
-			
-				rply.text = '【票卷招募】必中新春限定夥伴招募 \
-					\n 使用專用招募卷入手新春限定夥伴吧!!!\
-					\n 開催時間:2/17 00:00 ~ 3/4 23:59\
-					\n\
-					\n 期間限定登場:\
-					\n Sp1-賀歲的風之冒險團:\
-					\n <我不是年獸啊！>路卡\
-					\n <翠花劍士>露\
-					\n <春宴神廚>義熊\
-					\n <引導盛宴的武者>薰\
-					\n <賀歲路人>克雷特\
-					\n <春之霜>艾斯\
-					\n\
-					\n  (六名夥伴獲得機率相同)\
-					\n\
-					\n 提供招募方式：\
-					\n 單抽 必中新春限定夥伴招募招募卷x1(必定獲得夥伴)\
-					\n\
-					\n 想要招募的話，請輸入 [招募 3 招募方式]';
-					return rply;
-				
-			  }else{
-				rply.text = '本招募無法使用' + GachaTimes +'招募喔\n 如果想看本招募詳細內容，請輸入 [招募 ' + DrawPool + ']';
-				return rply;
-				}
 		}/*else if(DrawPool == 2){
 			CharacterList.length = 6;
 			CharacterList = ['劍士-露','長槍手-路卡','路人-克雷特','廚師-義熊','武士-薰','冰法師-艾斯'];
@@ -306,7 +266,6 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 				\n  0 【新手招募(首抽)】 \
 				\n  1 【限定招募】過往回憶的夥伴們(前篇)(NEW) \
 				\n  2 【通常奇蹟石招募】 \
-				\n  3 【票卷招募】必中新春限定夥伴招募(NEW) \
 				\n\
 				\n 如果想看詳細招募內容，請輸入 [招募 招募編號]';
 				return rply;
@@ -320,7 +279,6 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 				\n  0 【新手招募(首抽)】 \
 				\n  1 【限定招募】過往回憶的夥伴們(前篇)(NEW) \
 				\n  2 【通常奇蹟石招募】 \
-				\n  3 【票卷招募】必中新春限定夥伴招募(NEW) \
 				\n\
 				\n 如果想看詳細招募內容，請輸入 [招募 招募編號]';
 				return rply;
