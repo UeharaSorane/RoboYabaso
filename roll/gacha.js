@@ -2,7 +2,7 @@ var rollbase = require('./rollbase.js');
 var rply ={type : 'text'}; //type是必需的,但可以更改
 
 //////////////// 角色招募
-	function gacha(DrawPool,GachaTimes) {
+	function main(DrawPool,GachaTimes) {
 		
 		///基本變數
 		let GachaResult = [];//抽獎結果
@@ -37,7 +37,7 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 	
 			}else if(GachaTimes == null){
 				
-				return '\【首次限定！】新手招募-絕對獲得攻擊型夥伴一名喔！ \
+				rply.text = '【首次限定！】新手招募-絕對獲得攻擊型夥伴一名喔！ \
 					\n\
 					\n 出現夥伴一覽： \
 					\n 001起始英雄系列 \
@@ -49,11 +49,10 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 					\n 提供招募方式：\
 					\n 單抽 無需奇蹟石(100%出現夥伴)[一名玩家限定一次] \
 					\n\
-					\n 想要招募的話，請輸入 [招募 0 招募方式] \
-					';
+					\n 想要招募的話，請輸入 [招募 0 招募方式] ';
 				
 			  }else{
-				return '\本招募無法使用' + GachaTimes +'招募喔\n 如果想看本招募詳細內容，請輸入 [招募 ' + DrawPool + ']';
+				rply.text = '本招募無法使用' + GachaTimes +'招募喔\n 如果想看本招募詳細內容，請輸入 [招募 ' + DrawPool + ']';
 				}
 		}else if(DrawPool == 1){
 			CharacterList.length = 5;
@@ -93,7 +92,7 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 
 			}else if(GachaTimes == null){
 				
-				return '\【限定招募】過往回憶的夥伴們(前篇) \
+				rply.text = '【限定招募】過往回憶的夥伴們(前篇) \
 					\n 透過特別招募，結交回憶中可靠的夥伴們吧！\
 					\n 開催時間:3/10 00:00 ~ 3/31 23:59\
 					\n\
@@ -130,10 +129,9 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 					\n\
 					\n 十連加三(十連) 50顆奇蹟石(保底一名夥伴，夥伴碎片量:10~40)\
 					\n\
-					\n 想要招募的話，請輸入 [招募 1 招募方式] \
-				';
+					\n 想要招募的話，請輸入 [招募 1 招募方式] ';
 			  }else{
-				return '\本招募無法使用' + GachaTimes +'招募喔';
+				rply.text = '本招募無法使用' + GachaTimes +'招募喔';
 				}
 		}else if(DrawPool == 2){
 			CharacterList.length = 5;
@@ -159,7 +157,7 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 					
 			}else if(GachaTimes == null){
 
-				return '\【通常招募】通常奇蹟石招募 \
+				rply.text = '【通常招募】通常奇蹟石招募 \
 					\n 出現夥伴系列一覽： \
 					\n\
 					\n 001起始英雄系列 \
@@ -170,11 +168,10 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 					\n\
 					\n 十連加一(十連) 50顆奇蹟石(必定出現一名夥伴，其餘有10%出現夥伴，90%獲得10~30個夥伴碎片)\
 					\n\
-					\n 想要招募的話，請輸入 [招募 2 招募方式] \
-					';
+					\n 想要招募的話，請輸入 [招募 2 招募方式]';
 				
 			  }else{
-				return '\本招募無法使用' + GachaTimes +'招募喔\n 如果想看本招募詳細內容，請輸入 [招募 ' + DrawPool + ']';
+				rply.text = '本招募無法使用' + GachaTimes +'招募喔\n 如果想看本招募詳細內容，請輸入 [招募 ' + DrawPool + ']';
 				}
 		}else if(DrawPool == 3){
 			CharacterList.length = 6;
@@ -191,7 +188,7 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 	
 			}else if(GachaTimes == null){
 			
-				return '\【票卷招募】必中新春限定夥伴招募 \
+				rply.text = '【票卷招募】必中新春限定夥伴招募 \
 					\n 使用專用招募卷入手新春限定夥伴吧!!!\
 					\n 開催時間:2/17 00:00 ~ 3/4 23:59\
 					\n\
@@ -209,11 +206,10 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 					\n 提供招募方式：\
 					\n 單抽 必中新春限定夥伴招募招募卷x1(必定獲得夥伴)\
 					\n\
-					\n 想要招募的話，請輸入 [招募 3 招募方式] \
-					';
+					\n 想要招募的話，請輸入 [招募 3 招募方式]';
 				
 			  }else{
-				return '\本招募無法使用' + GachaTimes +'招募喔\n 如果想看本招募詳細內容，請輸入 [招募 ' + DrawPool + ']';
+				rply.text = '本招募無法使用' + GachaTimes +'招募喔\n 如果想看本招募詳細內容，請輸入 [招募 ' + DrawPool + ']';
 				}
 		}/*else if(DrawPool == 2){
 			CharacterList.length = 6;
@@ -229,7 +225,7 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 	
 			}else if(GachaTimes == null){
 			
-				return '\【票券招募】事前登錄卷限定招募 \
+				rply.text = '【票券招募】事前登錄卷限定招募 \
 					\n\
 					\n 出現夥伴一覽： \
 					\n  SP1 風之冒險團！系列 \
@@ -244,11 +240,10 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 					\n 提供招募方式：\
 					\n 單抽 事前登入專用招募卷x1(必定獲得夥伴)\
 					\n\
-					\n 想要招募的話，請輸入 [招募 2 招募方式] \
-					';
+					\n 想要招募的話，請輸入 [招募 2 招募方式] ';
 				
 			  }else{
-				return '\本招募無法使用' + GachaTimes +'招募喔\n 如果想看本招募詳細內容，請輸入 [招募 ' + DrawPool + ']';
+				rply.text = '本招募無法使用' + GachaTimes +'招募喔\n 如果想看本招募詳細內容，請輸入 [招募 ' + DrawPool + ']';
 				}
 		}*/else if(DrawPool == 1101211){
 			CharacterList.length = 5;
@@ -288,26 +283,24 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 
 			}else if(GachaTimes == null){
 				
-				return '\【測試招募】GM系統測試專用招募 \
-				';
+				rply.text = '【測試招募】GM系統測試專用招募';
 			  }else{
-				return '\本招募無法使用' + GachaTimes +'招募喔';
+				rply.text = '本招募無法使用' + GachaTimes +'招募喔';
 				}
 		}else if(DrawPool == null){
 			
-			return '\【招募目錄】目前的招募一覽表 \
+			rply.text = '【招募目錄】目前的招募一覽表 \
 				\n\
 				\n  0 【新手招募(首抽)】 \
 				\n  1 【限定招募】過往回憶的夥伴們(前篇)(NEW) \
 				\n  2 【通常奇蹟石招募】 \
 				\n  3 【票卷招募】必中新春限定夥伴招募(NEW) \
 				\n\
-				\n 如果想看詳細招募內容，請輸入 [招募 招募編號] \
-				';
+				\n 如果想看詳細招募內容，請輸入 [招募 招募編號]';
 			
 		}else{
 			
-			return '\找不到招募編號['+ DrawPool+ ']的招募喔\
+			rply.text = '找不到招募編號['+ DrawPool+ ']的招募喔\
 				\n\
 				\n【招募目錄】目前的招募一覽表 \
 				\n\
@@ -316,8 +309,7 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 				\n  2 【通常奇蹟石招募】 \
 				\n  3 【票卷招募】必中新春限定夥伴招募(NEW) \
 				\n\
-				\n 如果想看詳細招募內容，請輸入 [招募 招募編號] \
-				';
+				\n 如果想看詳細招募內容，請輸入 [招募 招募編號] ;
 			
 		}
 		
@@ -335,7 +327,7 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 		}
 		
 		for(var i = 0;i < characterST; i++){
-			temp = Dice(characterChance+characterChanceSP+characterChanceSecret);
+			temp = rollbase.Dice(characterChance+characterChanceSP+characterChanceSecret);
 			if(temp <= characterChanceSP+characterChanceSecret){
 				if(temp <= characterChanceSecret){
 					CharacterResult[times-characterST+i] = CharacterListSecret[Math.floor((Math.random() * (CharacterListSecret.length)) + 0)];
@@ -352,9 +344,9 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 		
 				
 		for(var i=0; i<times-characterST;i++){
-			temp = Dice(100);
+			temp = rollbase.Dice(100);
 
-			let Shard = Dice(CharacterShard)+CharacterShardBonus;
+			let Shard = rollbase.Dice(CharacterShard)+CharacterShardBonus;
 			if (temp > characterChance+characterChanceSP+characterChanceSecret){
 				characterShardResult = characterShardResult + Shard;
 				GachaResult[i] = '\夥伴碎片X' +  Shard + '片\n';
@@ -380,8 +372,8 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 		///
 		
 		///判定重複腳色換成100角色碎片
-		for(var i = 0;i<11;i++){
-			for(var j = i+1;j<11;j++){
+		for(var i = 0;i<times;i++){
+			for(var j = i+1;j<times;j++){
 				if(CharacterResult[i]!= null && CharacterResult[i] == CharacterResult[j] && CharacterResult[j] != null){
 					CharacterResult[j] = null;
 					characterShardResult = characterShardResult +100;
@@ -402,7 +394,9 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 		
 		GResult = GResult + '\n總計獲得夥伴碎片(連同重複夥伴):' + characterShardResult + '片';
 		
-		return GResult;
+		rply.text = GResult;
+		
+		return rply;
 		
 		
 		
