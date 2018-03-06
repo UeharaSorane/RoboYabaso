@@ -1,9 +1,6 @@
 var rply ={type : 'text'}; //type是必需的,但可以更改
 
 
-var rply ={type : 'text'}; //type是必需的,但可以更改
-
-
 //////////////// 遊戲主線
 	function mainStory(StoryPart,StoryN) {
 
