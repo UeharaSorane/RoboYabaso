@@ -3,7 +3,7 @@ var funny = require('./funny.js');
 var rply ={type : 'text'}; //type是必需的,但可以更改
 
 //////////////// 系統幫助
-function main() {
+function Help() {
 	rply.text =  funny.randomReply() + '\n' + '\
 	【梅里歐斯的冒險者專用BOT】v1.00 \
 	\n --傷害骰(a XdY+b)--\
@@ -40,7 +40,7 @@ function main() {
 ////////////////
 
 module.exports = {
-	Help:main
+	Help:Help
 };
 
 
