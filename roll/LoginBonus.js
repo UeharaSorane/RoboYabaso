@@ -14,3 +14,7 @@ function LoginBonus() {
     
 	}
 ////////////////
+
+module.exports = {
+	LoginBonus
+};
