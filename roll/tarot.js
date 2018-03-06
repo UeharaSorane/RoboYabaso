@@ -204,3 +204,10 @@ function tarotCardReply(count) {
 	//return rply;
 
 }
+
+module.exports = {
+	MultiDrawTarot,
+	NomalDrawTarot,
+	tarotRevReply,
+	tarotCardReply	
+};
