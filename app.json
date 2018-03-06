@@ -5,10 +5,10 @@
 	"keywords": ["Line Bot", "TRPG"],
 	"env": {
 		"LINE_CHANNEL_SECRET": {
-			"description":ceebe9ff62802d8fa8adea0931ff8127
+			"description":"ceebe9ff62802d8fa8adea0931ff8127"
 		},
 		"LINE_CHANNEL_ACCESSTOKEN": {
-			"description": lYdwsRWARZdugT38hv++gKdZ6EehgBUzEGUXTamr0VdLbB4bo7+peHbcD7P0ej/VwQk60J1yNoCZCEVuX7/UAkaIyOKKmMJ8rurN7qfSw7kE36draUEhu92NLxFForyyjWveCa8CS97/nWZzLgLCbAdB04t89/1O/w1cDnyilFU=
+			"description": "lYdwsRWARZdugT38hv++gKdZ6EehgBUzEGUXTamr0VdLbB4bo7+peHbcD7P0ej/VwQk60J1yNoCZCEVuX7/UAkaIyOKKmMJ8rurN7qfSw7kE36draUEhu92NLxFForyyjWveCa8CS97/nWZzLgLCbAdB04t89/1O/w1cDnyilFU="
 		},
 		"KEY_WORD": {
 			"description": "上原空音"
