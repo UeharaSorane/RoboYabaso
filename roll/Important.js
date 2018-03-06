@@ -54,3 +54,8 @@ function GameSave() {
 
 
 //////////////// 
+
+module.exports = {
+	ImportantInformation,
+	GameSave
+};
