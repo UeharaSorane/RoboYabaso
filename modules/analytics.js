@@ -24,6 +24,10 @@ function parseInput(rplyToken, inputStr) {
 ////////////////////////開始分析////////////////////////
 ///////////////////////////////////////////////////////
 	
+	///////////////////////////普通ROLL擲骰判定在此        
+        if (inputStr.match(/\w/)!=null && inputStr.toLowerCase().match(/\d+d+\d/)!=null) {
+          return export.rollbase.nomalDiceRoller(inputStr,mainMsg[0],mainMsg[1],mainMsg[2]);
+        }
 	
 	////////////////////////////情報相關
 	if (trigger.match(/^公告$/) != null) return exports.GameInformation.main(mainMsg[1]);	//遊戲公告指令
@@ -45,21 +49,17 @@ function parseInput(rplyToken, inputStr) {
 		return export.battle.xUy(trigger,mainMsg[1],mainMsg[2],mainMsg[3]);
 	}
 	
-	        //普通ROLL擲骰判定在此        
-        if (inputStr.match(/\w/)!=null && inputStr.toLowerCase().match(/\d+d+\d/)!=null) {
-          return export.battle.nomalDiceRoller(inputStr,mainMsg[0],mainMsg[1],mainMsg[2]);
-        }
 	
 	////////////////////////////服務相關
-	if (trigger.match(/^寶箱$|^開寶箱$/) != null) return exports.Rewards.BoxOpen() ;//寶箱狩獵指令
-	if (trigger.match(/^祈願$/) != null) return exports.Rewards.LoginBonus() ;//每日登入指令
-	if (trigger.match(/^help$|^幫助$/)!= null ) return exports.others.Help();//幫助頁面
-	if (trigger.match(/^教學$|^新手教學$/)!= null ) return exports.others.tutorial(mainMsg[1]);//新手教學頁面
+	if (trigger.match(/^寶箱$|^開寶箱$/) != null) return exports.BoxOpen.main() ;//寶箱狩獵指令
+	if (trigger.match(/^祈願$/) != null) return exports.LoginBonus.main() ;//每日登入指令
+	if (trigger.match(/^help$|^幫助$/)!= null ) return exports.Help.main();//幫助頁面
+	if (trigger.match(/^教學$|^新手教學$/)!= null ) return exports.tutorial.main(mainMsg[1]);//新手教學頁面
 	if (trigger.match(/^重要資訊處$/)!= null ) return exports.Important.ImportantInformation();//重要資訊處
 	if (trigger.match(/^遊戲存檔$/)!= null ) return exports.Important.GameSave();//遊戲存檔
 	if (trigger.match(/^招募$/) != null) return exports.gacha.main(mainMsg[1],mainMsg[2]);	//角色招募指令
-	if (trigger.match(/^更新紀錄$/) != null) return exports.others.UpdateLog();//更新紀錄指令
-	//if (trigger.match(/^主線$/) != null) return exports.MainStory.main(mainMsg[1],mainMsg[2]);	//遊戲主線指令
+	if (trigger.match(/^更新紀錄$/) != null) return exports.Update.UpdateLog();//更新紀錄指令
+	//if (trigger.match(/^主線$/) != null) return exports.Story.mainStory(mainMsg[1],mainMsg[2]);	//遊戲主線指令
 	
 	////////////////////////////娛樂相關
         if (trigger.match(/空音/) != null) return exports.funny.randomReply() ;//空音閒談指令
