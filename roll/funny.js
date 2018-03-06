@@ -87,7 +87,7 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 		  	'\我最喜歡的角色嗎...？應該是露吧。不論何時都很可愛',
 		  	'\稍微...讓我休息一下吧(攤',
 			'\希望我成為你的同伴？看看夥伴商店吧！'];
-        	rply.text =[Math.floor((Math.random() * (rplyArr.length)) + 0)];
+        	rply.text =  rplyArr[Math.floor((Math.random() * (rplyArr.length)) + 0)];
 					
 			return rply;
         }
@@ -109,7 +109,7 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 		  	'\私',
 		  	'\幫我撐十秒',
 		  	'\整天妄想稱呼我暱稱？真是有夠噁心的'];
-        	rply.text =[Math.floor((Math.random() * (rplyArr.length)) + 0)];
+        	rply.text =  rplyArr[Math.floor((Math.random() * (rplyArr.length)) + 0)];
 					
 			return rply;
         }
