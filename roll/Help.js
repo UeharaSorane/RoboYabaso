@@ -40,7 +40,7 @@ function main() {
 ////////////////
 
 module.exports = {
-	main
+	Help:main
 };
 
 
