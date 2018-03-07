@@ -22,6 +22,22 @@ function ccb(chack,text){
 }
 ////////////////
 
+//////////////// 速度判定
+function spd(spd1p,spd2p){
+	let temp = rollbase.Dice(100);
+	
+	var spdmus = spd1p - spd2p;
+
+	if (spdmus+50 > temp) {
+		rply.text = '速度判定->' + spdmus +'<='+ temp-50 + '→ 你先攻！';
+	}else{
+		rply.text = '速度判定->' + spdmus +'>'+ temp-50 + '→ 對手先攻！';
+	}
+	return rply;
+	
+}
+////////////////
+
 //////////////// xBy
 function xBy(triggermsg ,text01, text02) {
 
@@ -131,6 +147,7 @@ function xUy(triggermsg ,text01, text02, text03) {
 
 module.exports = {
 	ccb,
+	spd,
 	xBy,
 	xUy
 };
