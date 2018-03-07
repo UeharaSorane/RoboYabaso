@@ -58,7 +58,7 @@ function main() {
 	var d = new Date();
         var n = d.getHours();
 	
-	if (n < 12) day++;
+	if (n >=16) day++;
         console.log(day);
 	console.log(n);
 	
