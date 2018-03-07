@@ -54,6 +54,12 @@ function main() {
 	var date = new Date();
 	var day = date.getDay();
 	
+	var d = new Date();
+        var n = d.getHours();
+	
+	if (n < 12) day++;
+
+	
 	///寶箱機率
 	var Nrate = 32;
 	var Rrate = 28;
