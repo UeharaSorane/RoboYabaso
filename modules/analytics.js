@@ -38,6 +38,11 @@ function parseInput(rplyToken, inputStr) {
 	if (trigger.match(/^ccb$/)!= null && mainMsg[1]<=1000 ){
 		if (trigger == 'ccb'&& mainMsg[1]<=99) return exports.battle.ccb(mainMsg[1],mainMsg[2]);
         }
+	
+	if (trigger.match(/^速度判定$/)!= null && mainMsg[1]<=1000 && mainMsg[2]<=1000 ){
+		if (trigger == '速度判定'&& mainMsg[1]<=99 && mainMsg[2]<=99) return exports.battle.spd(mainMsg[1],mainMsg[2]);
+        }
+	
 	//xBy>A 指令開始於此
 	if (trigger.match(/^(\d+)(b)(\d+)$/i)!= null)
 	{        
