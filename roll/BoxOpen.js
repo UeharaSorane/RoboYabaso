@@ -53,12 +53,14 @@ MondayBox = TuesdayBox + WednesdayBox + ThursdayBox;
 function main() {
 	var date = new Date();
 	var day = date.getDay();
+	console.log(day);
 	
 	var d = new Date();
         var n = d.getHours();
 	
 	if (n < 12) day++;
-
+        console.log(day);
+	console.log(n);
 	
 	///寶箱機率
 	var Nrate = 32;
