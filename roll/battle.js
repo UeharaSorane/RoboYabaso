@@ -29,9 +29,9 @@ function spd(spd1p,spd2p){
 	var spdmus = spd1p - spd2p;
 
 	if (spdmus+50 > temp) {
-		rply.text = '速度判定→ 你先攻！';
+		rply.text = '速度差:'+spdmus+'→ 你先攻！';
 	}else{
-		rply.text = '速度判定→ 對手先攻！';
+		rply.text = '速度差:'+spdmus+'→ 對手先攻！';
 	}
 	return rply;
 	
