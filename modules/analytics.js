@@ -39,7 +39,8 @@ function parseInput(rplyToken, inputStr) {
 		if (trigger == 'ccb'&& mainMsg[1]<=99) return exports.battle.ccb(mainMsg[1],mainMsg[2]);
         }
 	
-	if (trigger.match(/^速度判定$/)!= null && mainMsg[1]<=1000 && mainMsg[2]<=1000 ){
+	//速度判定指令
+	if (trigger.match(/^速度判定$|^速度$/)!= null && mainMsg[1]<=1000 && mainMsg[2]<=1000 ){
 		if (trigger == '速度判定'&& mainMsg[1]<=99 && mainMsg[2]<=99) return exports.battle.spd(mainMsg[1],mainMsg[2]);
         }
 	
