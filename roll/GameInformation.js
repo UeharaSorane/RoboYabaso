@@ -27,19 +27,14 @@ function main(InformationN) {
 				\n\
 				\n 3.武器適性變更:\
 				\n(1)武器獨立適性將與武器適性分開，改為「武器特效」，效果跟觸發方式不變\
-				\n(2)書的特效與長杖的特效互換\
-		
-		
-				';
+				\n(2)書的特效與長杖的特效互換';
 
 	}else if(InformationN == 2){
 
 		 rply.text = '【重要】 超級大更新 \
   				\n 本次更新內容極為大量，請至本文確認\
 				\n https://docs.google.com/document/d/1P_h7_26TmzJrHGh4H9qaiur1toeJYYidDxJpy1_DlCY/edit?usp=sharing\
-				\n 以上更新將於 3/10 00:00 生效\
-				
-				';
+				\n 以上更新將於 3/10 00:00 生效';
 
 	}else if(InformationN == 3){
 
