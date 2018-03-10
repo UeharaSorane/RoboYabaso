@@ -353,7 +353,7 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 			   }
 		}
 		
-		let GResult ='招募結果:\n'
+		let GResult =GachaTimes + '招募結果:\n'
 		for(var i = 0;i<times;i++){
 			GResult = GResult + GachaResult[i];
 		}
