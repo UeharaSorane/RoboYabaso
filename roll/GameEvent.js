@@ -135,7 +135,7 @@ function main(EventN,EventStoryN) {
 				';
 
 		}else{
-			rply.text = '找不到關卡['+ EventStoryN + ']的關卡喔\';
+			rply.text = '找不到關卡['+ EventStoryN + ']的關卡喔';
 		}
 		///
 
