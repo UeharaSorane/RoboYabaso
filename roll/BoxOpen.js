@@ -14,7 +14,8 @@ let TuesdayBox = [
 		'燃燒箭',
 		'重劈',
 		'猛虎一式',
-		'獵龍一式'
+		'獵龍一式',
+		'蓄力打擊'
 		 ];
 
 let WednesdayBox = [
@@ -41,14 +42,15 @@ let ThursdayBox = [
 		'箭神的心得(被動)',
 		'狂戰士的回憶(被動)',
 		'牧師的專業(被動)',
-		'不滅意志(被動)'
+		'不滅意志(被動)',
+		'急速詠唱'
 		 ];
 
 let MondayBox = [];
 
 MondayBox.length = TuesdayBox.length + WednesdayBox.length  + ThursdayBox.length;
 
-MondayBox = TuesdayBox + WednesdayBox + ThursdayBox;
+MondayBox = TuesdayBox.concat(WednesdayBox,ThursdayBox);
 
 function main() {
 	var date = new Date();
