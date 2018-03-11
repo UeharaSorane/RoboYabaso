@@ -31,7 +31,7 @@ function parseInput(rplyToken, inputStr) {
 	
 	////////////////////////////情報相關
 	if (trigger.match(/^公告$/) != null) return exports.GameInformation.main(mainMsg[1]);	//遊戲公告指令
-	if (trigger.match(/^活動$/) != null) return exports.GameEvent.main(mainMsg[1]);	//遊戲活動指令
+	if (trigger.match(/^活動$/) != null) return exports.GameEvent.main(mainMsg[1],mainMsg[2]);	//遊戲活動指令
 	
 	////////////////////////////戰鬥相關
 	//ccb指令
