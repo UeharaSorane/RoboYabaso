@@ -63,6 +63,7 @@ function parseInput(rplyToken, inputStr) {
 	if (trigger.match(/^教學$|^新手教學$/)!= null ) return exports.tutorial.main(mainMsg[1]);//新手教學頁面
 	if (trigger.match(/^重要資訊處$/)!= null ) return exports.Important.ImportantInformation();//重要資訊處
 	if (trigger.match(/^遊戲存檔$/)!= null ) return exports.Important.GameSave();//遊戲存檔
+	if (trigger.match(/^公會$/)!= null ) return exports.Important.Guild();//公會專區
 	if (trigger.match(/^招募$/) != null) return exports.gacha.main(mainMsg[1],mainMsg[2]);	//角色招募指令
 	if (trigger.match(/^更新紀錄$/) != null) return exports.Update.UpdateLog();//更新紀錄指令
 	//if (trigger.match(/^主線$/) != null) return exports.Story.mainStory(mainMsg[1],mainMsg[2]);	//遊戲主線指令
