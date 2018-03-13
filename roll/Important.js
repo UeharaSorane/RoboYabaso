@@ -84,5 +84,5 @@ function Guild() {
 module.exports = {
 	ImportantInformation,
 	GameSave,
-	Gulid
+	Guild
 };
