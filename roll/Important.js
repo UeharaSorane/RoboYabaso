@@ -22,6 +22,9 @@ function ImportantInformation() {
 	\n 特殊商店-夥伴商城:\
 	\n https://docs.google.com/document/d/1pR0_PBwf-k6WtNJnpvIZBgrjKvMoTpHu1SH3PsuUYXk/edit?usp=sharing\
 	\n\
+	\n 特殊商店-奇蹟商城:\
+	\n https://docs.google.com/document/d/1IOWyXnajhx3c2kz1mAolmOt7JIe4t5WFJuDcrZT14-0/edit?usp=sharing\
+	\n\
 	\n 武器特效一覽表:\
 	\n https://docs.google.com/document/d/1_oUPgsk_bbkqVaYqARYdQ5pmSDYRvb4FTypZkjotJJY/edit?usp=sharing\
 	\n\
