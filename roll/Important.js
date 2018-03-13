@@ -55,7 +55,34 @@ function GameSave() {
 
 //////////////// 
 
+//////////////// 公會專區
+function Guild() {
+	rply.text =  '【公會專區】\
+	\n 這裡是確認公會各項的地方\
+	\n\
+	\n 公會一覽表1區:\
+	\n https://docs.google.com/spreadsheets/d/1KNAHWzYI3CpfA4o9Cw88xxFeNkWMfgYVFmIM_nF2Afg/edit?usp=drivesdk\
+	\n\
+	\n 公會設施說明及武器進化說明:\
+	\n https://docs.google.com/document/d/1NAB984kqHs8ED-9ehfq8Zz7WQprDMkOLpEIqklhIe-E/edit?usp=drivesdk\
+	\n\
+	\n 公會申請/加入方法:\
+	\n https://docs.google.com/document/d/1YuFLeoQIB7LJH8ikjkihVb1P_O3xIouVIBfKpba-bYU/edit?usp=drivesdk\
+	\n\
+	\n 公會設施目錄:\
+	\n https://docs.google.com/spreadsheets/d/1SJXxFnVEx7kSDXy8uVEdlW63Dnqxb1EoHR9S53uy-EM/edit?usp=drivesdk\
+	\n\
+	\n 以上內容皆能在 文章區確認';
+  
+    return rply;
+  
+}
+
+
+////////////////
+
 module.exports = {
 	ImportantInformation,
-	GameSave
+	GameSave,
+	Gulid
 };
