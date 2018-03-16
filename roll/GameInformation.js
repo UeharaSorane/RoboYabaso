@@ -16,36 +16,28 @@ function main(InformationN) {
 			    \n        GM團';
 	}else if(InformationN == 1){
 
-		 rply.text = '【重要】 超級大更新 \
+		 rply.text = '【重要】 大更新 \
   				\n 本次更新內容極為大量，請至本文確認\
-				\n https://docs.google.com/document/d/18rghjUE_q25fQUXhyy68DOfJb5Uuyvw97kE7m95IJnY/edit?usp=sharing\
-				\n 以上更新將於 3/14 00:00 生效';
+				\n https://docs.google.com/document/d/13MBJUM9cqmofYQHpr5242ehO25phRYcYrUZSxp3bWCo/edit\
+				\n 以上更新將於 3/17 00:00 生效';
 
 	}else if(InformationN == 2){
 
-		 rply.text = '【預告】 三月系列活動 \
+		 rply.text = '【活動】 三月系列活動 \
   			      \n 詳細請確認:https://docs.google.com/document/d/1vxUMTrVXpnYK7_My9aO8Ih2tA-aEDc3UHMLBbjkLVlE/edit?usp=sharing';
 
 	}else if(InformationN == 3){
-		 rply.text = '【更新】 本次更新介紹 \
-				   \n 1.BOT維護:\
-				   \n   (1)增加「公會專區」';
+		 rply.text = '【補償】 大補償 \
+				    \n\
+				    \n(1)不少技能變更補償:\
+				    \n  由於不少東西被改，給予全體玩家「奇蹟石x20」作為補償\
+				    \n\
+				    \n(2)資料更新延遲補償:\
+				    \n  近期因為同時處里大改情報導致資料處裡不斷延遲，將給予全體玩家「奇蹟石x20」作為補償。在大改版完成前可能還會持續一段時間，敬請見諒。\
+				    \n\
+				    \n 以上補償將在2018/3/17 00:00 開始發放';
 
 	}else if(InformationN == 4){
-		 rply.text = '【補償】 超級大補償 \
-				    \n\
-				    \n1.超多技能更改補償:\
-				    \n  由於過多技能進行變更，將贈予全體玩家「奇蹟石x30」的賠償\
-				    \n\
-				    \n2.素質系統重置補償:\
-				    \n  由於tp系統大改，將贈與全體玩家「奇蹟石x20」「基本能力重置卷x1」作為補償\
-				    \n\
-				    \n3.設施變動補償:\
-				    \n 將贈與全體玩家「奇蹟石x15」作為補償\
-				    \n\
-				    \n 以上補償將在2018/3/14 00:00 開始發放';
-
-	}else if(InformationN == 5){
 		 rply.text = '【活動】劇情活動-路卡與梅里歐斯的回憶(前篇) \
 				   \n\
 				   \n 開催時間:3/15 00:00~3/31 23:59\
@@ -56,13 +48,12 @@ function main(InformationN) {
 		 rply.text = '【公告目錄】目前遊戲中的公告一覽表 \
 				\n\
 				\n  0 【重要】 先行測試2(公開測試) 正式開始!\
-				\n  1 【重要】 超級大更新(NEW)\
-				\n  2 【預告】 三月系列活動\
-				\n  3 【更新】 本次更新介紹(NEW)\
-				\n  4 【補償】 超級大補償(NEW)\
-				\n  5 【活動預告】劇情活動-路卡與梅里歐斯的回憶(前篇)\
-				   \n\
-				   \n 如果想看詳細公告內容，請輸入 [公告 公告編號] ';
+				\n  1 【重要】 大更新(NEW)\
+				\n  2 【活動】 三月系列活動\
+				\n  3 【補償】 大補償(NEW)\
+				\n  4 【活動】劇情活動-路卡與梅里歐斯的回憶(前篇)\
+				\n\
+				\n 如果想看詳細公告內容，請輸入 [公告 公告編號] ';
 	}else{
 
 		 rply.text = '找不到公告編號['+ InformationN + ']的公告喔\
@@ -70,11 +61,10 @@ function main(InformationN) {
 				\n【公告目錄】目前遊戲中的公告一覽表 \
 				\n\
 				\n  0 【重要】 先行測試2(公開測試) 正式開始!\
-				\n  1 【重要】 超級大更新(NEW)\
-				\n  2 【預告】 三月系列活動\
-				\n  3 【更新】 本次更新介紹(NEW)\
-				\n  4 【補償】 超級大補償(NEW)\
-				\n  5 【活動預告】劇情活動-路卡與梅里歐斯的回憶(前篇)\
+				\n  1 【重要】 大更新(NEW)\
+				\n  2 【活動】 三月系列活動\
+				\n  3 【補償】 大補償(NEW)\
+				\n  4 【活動】劇情活動-路卡與梅里歐斯的回憶(前篇)\
 				\n\
 				\n 如果想看詳細公告內容，請輸入 [公告 公告編號] ';
 
