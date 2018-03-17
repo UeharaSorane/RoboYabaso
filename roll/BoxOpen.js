@@ -403,14 +403,14 @@ function main(userID, test) {
 						if (err) {
 							console.log( err );
 						}else{
-							rows[i].gold = CharArr[i][2];
-							rows[i].mirastone = CharArr[i][3];
-							rows[i].wmaterials = CharArr[i][7];
-							rows[i].wmaterialm = CharArr[i][8];
-							rows[i].wmateriall = CharArr[i][9];
-							rows[i].gmaterials = CharArr[i][10];
-							rows[i].gmaterialm = CharArr[i][11];
-							rows[i].gmateriall = CharArr[i][12];
+							rows[i].Gold = CharArr[i][2];
+							rows[i].MiraStone = CharArr[i][3];
+							rows[i].WmaterialS = CharArr[i][7];
+							rows[i].WmaterialM = CharArr[i][8];
+							rows[i].WmaterialL = CharArr[i][9];
+							rows[i].GmaterialS = CharArr[i][10];
+							rows[i].GmaterialM = CharArr[i][11];
+							rows[i].GmaterialL = CharArr[i][12];
 							rows[i].save();
 							
 						}
