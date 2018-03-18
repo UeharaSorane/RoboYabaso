@@ -67,6 +67,7 @@ function parseInput(rplyToken, inputStr) {
 	if (trigger.match(/^招募$/) != null) return exports.gacha.main(mainMsg[1],mainMsg[2]);	//角色招募指令
 	if (trigger.match(/^更新紀錄$/) != null) return exports.Update.UpdateLog();//更新紀錄指令
 	if (trigger.match(/^武器圖鑑$/)!= null ) return exports.WeaponIllustration.WeapIllustration(mainMsg[1]);//武器圖鑑
+	if (trigger.match(/^飾品圖鑑$/)!= null ) return exports.AccessoriesIllustration.AccessoriesIllustration(mainMsg[1]);//飾品圖鑑
 	//if (trigger.match(/^主線$/) != null) return exports.Story.mainStory(mainMsg[1],mainMsg[2]);	//遊戲主線指令
 	
 	////////////////////////////娛樂相關
