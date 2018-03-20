@@ -70,6 +70,7 @@ function parseInput(rplyToken, inputStr) {
 	if (trigger.match(/^飾品圖鑑$/)!= null ) return exports.AccessoriesIllustration.AccessoriesIllustration(mainMsg[1]);//飾品圖鑑
 	if (trigger.match(/^紋章圖鑑$/)!= null ) return exports.BadgeIllustration.BadgeIllustration(mainMsg[1]);//紋章圖鑑
 	if (trigger.match(/^技能圖鑑$/)!= null ) return exports.SkillIllustration.SkillIllustration(mainMsg[1]);//紋章圖鑑
+	if (trigger.match(/^夥伴圖鑑$/)!= null ) return exports.TeammateIllustration.TMIllustration(mainMsg[1]);//夥伴圖鑑
 	//if (trigger.match(/^主線$/) != null) return exports.Story.mainStory(mainMsg[1],mainMsg[2]);	//遊戲主線指令
 	
 	////////////////////////////娛樂相關
