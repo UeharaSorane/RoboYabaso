@@ -23,8 +23,12 @@ function main(InformationN) {
 
 	}else if(InformationN == 2){
 
-		 rply.text = '【活動】 三月系列活動 \
-  			      \n 詳細請確認:https://docs.google.com/document/d/1vxUMTrVXpnYK7_My9aO8Ih2tA-aEDc3UHMLBbjkLVlE/edit?usp=sharing';
+		 rply.text = '【活動】特殊活動?-神秘的劇本 \
+				\n\
+				\n 開催時間:4/1 00:00~4/1 23:59\
+  			      	\n 活動方式:\
+				\n     向GM觀看劇情，也許能得到什麼？\
+				\n';
 
 	}else if(InformationN == 3){
 		 rply.text = '【活動】劇情活動-路卡與梅里歐斯的回憶(前篇) \
@@ -38,7 +42,7 @@ function main(InformationN) {
 				\n\
 				\n  0 【重要】 先行測試2(公開測試) 正式開始!\
 				\n  1 【重要】 更新(NEW)\
-				\n  2 【活動】 三月系列活動\
+				\n  2 【活動】特殊活動?-神秘的劇本(NEW)\
 				\n  3 【活動】劇情活動-路卡與梅里歐斯的回憶(前篇)\
 				\n\
 				\n 如果想看詳細公告內容，請輸入 [公告 公告編號] ';
@@ -50,7 +54,7 @@ function main(InformationN) {
 				\n\
 				\n  0 【重要】 先行測試2(公開測試) 正式開始!\
 				\n  1 【重要】 更新(NEW)\
-				\n  2 【活動】 三月系列活動\
+				\n  2 【活動】特殊活動?-神秘的劇本(NEW)\
 				\n  3 【活動】劇情活動-路卡與梅里歐斯的回憶(前篇)\
 				\n\
 				\n 如果想看詳細公告內容，請輸入 [公告 公告編號] ';
