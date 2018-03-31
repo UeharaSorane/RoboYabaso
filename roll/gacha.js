@@ -215,7 +215,73 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 				rply.text = '本招募無法使用' + GachaTimes +'招募喔\n 如果想看本招募詳細內容，請輸入 [招募 ' + DrawPool + ']';
 				return rply;
 				}
-		}*/else if(DrawPool == 1101211){
+		}*/else if(DrawPool == 3){
+			CharacterList.length = 0;
+			CharacterList = [];
+			CharacterListSP.length = 0;
+			CharacterListSP = [];
+			CharacterListSecret.length = 0;
+			CharacterListSecret = [];
+			
+			//機率皆相同
+			characterChance = 0;
+			characterChanceSP = 0;
+			characterChanceSecret =0;
+			//
+
+			if(GachaTimes =='首單抽'){
+				times = 1;
+				CharacterShard = 0;
+				CharacterShardBonus = 0;
+				
+			}else if(GachaTimes =='單抽'){
+				times = 1;
+				CharacterShard = 0;
+				CharacterShardBonus = 0;
+						
+			}else if(GachaTimes =='五連加一'||GachaTimes =='五連'){
+				times = 6;
+				CharacterShard = 0;
+				CharacterShardBonus = 0;
+				characterST = 0;
+
+			}else if(GachaTimes =='十連加三'||GachaTimes =='十連'){
+				times = 13;
+				CharacterShard = 0;
+				CharacterShardBonus = 0;
+				characterST = 0;
+
+			}else if(GachaTimes == null){
+				
+				rply.text = '【緊急招募】最強傳說登場!? \
+					\n 透過特別招募，結交傳說中的...GM!?\
+					\n 開催時間:4/1 00:00 ~ 4/1 23:59\
+					\n\
+					\n !!!超爆絕傳說限定登場:!!!\
+					\n {最強傳說}充滿決心的詩焱刃\
+					\n\
+					\n 命中機率(不論用何種招募，機率都相同):\
+					\n 夥伴碎片:99.999999999%\
+					\n 通常夥伴:0%\
+					\n 限定夥伴:0%\
+					\n 超稀有:0.0000000001%\
+					\n\
+					\n 提供招募方式：\
+					\n [首次限定] 首單抽 無需奇蹟石(夥伴碎片量:0)[每名玩家限定一次]\
+					\n\
+					\n 單抽 0顆奇蹟石(夥伴碎片量:0)\
+					\n\
+					\n 五連加一(五連) 0顆奇蹟石(夥伴碎片量:0)\
+					\n\
+					\n 十連加三(十連) 0顆奇蹟石(夥伴碎片量:0)\
+					\n\
+					\n 想要招募的話，請輸入 [招募 3 招募方式] ';
+					return rply;
+			  }else{
+				rply.text = '本招募無法使用' + GachaTimes +'招募喔';
+				return rply;
+				}
+		}else if(DrawPool == 1101211){
 			CharacterList.length = 5;
 			CharacterList = ['義熊','尤克特','克雷特','路卡','露'];
 			CharacterListSP.length = 3;
@@ -266,6 +332,7 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 				\n  0 【新手招募(首抽)】 \
 				\n  1 【限定招募】過往回憶的夥伴們(前篇)(NEW) \
 				\n  2 【通常奇蹟石招募】 \
+				\n  3 【緊急招募】最強傳說登場!? \
 				\n\
 				\n 如果想看詳細招募內容，請輸入 [招募 招募編號]';
 				return rply;
@@ -279,6 +346,7 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 				\n  0 【新手招募(首抽)】 \
 				\n  1 【限定招募】過往回憶的夥伴們(前篇)(NEW) \
 				\n  2 【通常奇蹟石招募】 \
+				\n  3 【緊急招募】最強傳說登場!? \
 				\n\
 				\n 如果想看詳細招募內容，請輸入 [招募 招募編號]';
 				return rply;
