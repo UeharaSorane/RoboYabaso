@@ -231,23 +231,23 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 
 			if(GachaTimes =='首單抽'){
 				times = 1;
-				CharacterShard = 0;
+				CharacterShard = -1;
 				CharacterShardBonus = 0;
 				
 			}else if(GachaTimes =='單抽'){
 				times = 1;
-				CharacterShard = 0;
+				CharacterShard = -1;
 				CharacterShardBonus = 0;
 						
 			}else if(GachaTimes =='五連加一'||GachaTimes =='五連'){
 				times = 6;
-				CharacterShard = 0;
+				CharacterShard = -1;
 				CharacterShardBonus = 0;
 				characterST = 0;
 
 			}else if(GachaTimes =='十連加三'||GachaTimes =='十連'){
 				times = 13;
-				CharacterShard = 0;
+				CharacterShard = -1;
 				CharacterShardBonus = 0;
 				characterST = 0;
 
