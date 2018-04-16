@@ -77,10 +77,10 @@ function main() {
 	console.log(n);
 	
 	///寶箱機率
-	var Nrate = 32;
-	var Rrate = 28;
-	var Hrate = 25;
-	var Prate = 15;
+	var Nrate = 30;
+	var Rrate = 20;
+	var Hrate = 20;
+	var Prate = 30;
 	
 	var RHP = Rrate+Hrate+Prate;
 	var HP = Hrate+Prate;
