@@ -59,7 +59,7 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 			  	}
 		}else if(DrawPool == 1){
 			CharacterList.length = 5;
-			CharacterList = ['義熊','尤克特','克雷特','路卡','露'];
+			CharacterList = ['義熊','尤克特','克雷特','路卡','露','白蓮','迦羅','須藤','菲尼','托克斯'];
 			CharacterListSP.length = 0;
 			CharacterListSP = [];
 
@@ -70,7 +70,7 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 				CharacterShard = 10;
 				CharacterShardBonus = 0;
 	
-			}else if(GachaTimes =='十連加一'||GachaTimes =='十連'){
+			}else if(GachaTimes =='十連加一'||GachaTimes =='十連'||GachaTimes =='補償十連'){
 				times = 11;
 				characterChance = 10;
 				characterChanceSP = 0;
@@ -82,15 +82,27 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 			}else if(GachaTimes == null){
 
 				rply.text = '【通常招募】通常奇蹟石招募 \
+					\n4/16新增新系列!!!!!\
+					\n 002尋找世界美好的冒險者系列\
+					\n 新增夥伴一覽:\
+					\n 白蓮\
+					\n 迦羅\
+					\n 須藤\
+					\n 菲尼\
+					\n 托克斯\
+					\n\
 					\n 出現夥伴系列一覽： \
 					\n\
 					\n 001起始英雄系列 \
+					\n 002尋找世界美好的冒險者系列 \
 					\n  (全部夥伴獲得機率相同)\
 					\n\
 					\n 提供招募方式：\
 					\n 單抽 5顆奇蹟石(20%出現夥伴，80%獲得1~10個夥伴碎片)\
 					\n\
 					\n 十連加一(十連) 50顆奇蹟石(必定出現一名夥伴，其餘有10%出現夥伴，90%獲得10~30個夥伴碎片)\
+					\n\
+					\n 補償十連 無需奇蹟石(必定出現一名夥伴，其餘有10%出現夥伴，90%獲得10~30個夥伴碎片)[一名玩家限定一次][直到4/31]\
 					\n\
 					\n 想要招募的話，請輸入 [招募 2 招募方式]';
 					return rply;
