@@ -58,7 +58,142 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 				return rply;	
 			  	}
 		}else if(DrawPool == 1){
-			CharacterList.length = 5;
+			CharacterList = ['義熊','尤克特','克雷特','路卡','露','白蓮','迦羅','須藤','菲尼','托克斯'];
+			CharacterListSP.length = 3;
+			CharacterListSP = ['薰(回憶ver)','尤克特(回憶ver)','諾亞(回憶ver)'];
+			CharacterListSecret.length = 1;
+			CharacterListSecret = ['奧賽羅爾(回憶ver)'];
+			//機率皆相同
+			characterChance = 10;
+			characterChanceSP = 8;
+			characterChanceSecret =2;
+			CharacterShard = 10;
+			//
+
+			if(GachaTimes =='首單抽'){
+				times = 1;
+				
+			}else if(GachaTimes =='單抽'){
+				times = 1;
+						
+			}else if(GachaTimes =='五連加一'||GachaTimes =='五連'){
+				times = 6;
+				characterST = 0;
+
+			}else if(GachaTimes =='十連加三'||GachaTimes =='十連'){
+				times = 13;
+				characterST = 1;
+
+			}else if(GachaTimes == null){
+				
+				rply.text = '【限定招募】過往回憶的夥伴們(後篇) \
+					\n開催時間:5/8 00:00~5/31 23:59\
+					\n\
+					\n 透過特別招募，結交回憶中可靠的夥伴們吧！\
+					\n 傳說中的那個，最強諸神廳議長也來了!?\
+					\n\
+					\n 期間限定登場:\
+					\n <武人之道的追求者>薰\
+					\n <熾熱復仇的追求者>諾亞\
+					\n <奇蹟冒險的追求者>尤克特\
+					\n\
+					\n !!!超稀有限定登場!!!\
+					\n\
+					\n 出現夥伴系列一覽： \
+					\n {審判光神}奧賽羅爾\
+					\n\
+					\n 還可以招募到以下夥伴:\
+					\n 001起始英雄系列 \
+					\n 002尋找世界美好的冒險者系列 \
+					\n 命中機率(不論用何種招募，機率都相同):\
+					\n 夥伴碎片(1~10個):80%\
+					\n 通常夥伴:10%\
+					\n 限定夥伴:8%\
+					\n 超稀有:2%\
+					\n\
+					\n 保底夥伴命中機率(當招募內容有保底時，該保底夥伴出現機率):\
+					\n 通常夥伴:50%\
+					\n 限定夥伴:40%\
+					\n 超稀有:10%\
+					\n\
+					\n 提供招募方式：\
+					\n 首單抽 無須奇蹟石[每名玩家限定一次]\
+					\n 單抽 5顆奇蹟石\
+					\n 五連加一(五連) 25顆奇蹟石\
+					\n 十連加三(十連) 50顆奇蹟石[保底夥伴x1]\
+					\n\
+					\n 想要招募的話，請輸入 [招募 1 招募方式]';
+					return rply;
+			  }else{
+				rply.text = '本招募無法使用' + GachaTimes +'招募喔';
+				return rply;
+				}
+		}else if(DrawPool == 2){
+			CharacterList = ['義熊','尤克特','克雷特','路卡','露','白蓮','迦羅','須藤','菲尼','托克斯'];
+			CharacterListSP.length = 3;
+			CharacterListSP = ['路卡(回憶ver)','克雷特(回憶ver)','義熊(回憶ver)'];
+			CharacterListSecret.length = 1;
+			CharacterListSecret = ['瑟雷娜'];
+			//機率皆相同
+			characterChance = 10;
+			characterChanceSP = 8;
+			characterChanceSecret =2;
+			CharacterShard = 10;
+			//
+
+			if(GachaTimes =='首單抽'){
+				times = 1;
+				
+			}else if(GachaTimes =='單抽'){
+				times = 1;
+						
+			}else if(GachaTimes =='十連加一'||GachaTimes =='十連'){
+				times = 11;
+				characterST = 1;
+
+			}else if(GachaTimes == null){
+				
+				rply.text = '【限定復刻】過往回憶的夥伴們(前篇) \
+					\n開催時間:5/8 00:00~5/31 23:59\
+					\n\
+					\n 上次的限定招募還沒結交到想要的夥伴嗎？\
+					\n 這次，傳說的劍士將再度登場！想要的冒險者們千萬不能錯過！\
+					\n\
+					\n 期間限定登場:\
+					\n <黃金之泉的追求者>路卡\
+					\n <傳說蘿莉的追求者>克雷特\
+					\n <興趣的追求者>義熊\
+					\n\
+					\n !!!超稀有限定登場!!!\
+					\n\
+					\n 出現夥伴系列一覽： \
+					\n {鋒芒盡藏}瑟蕾娜\
+					\n\
+					\n 還可以招募到以下夥伴:\
+					\n 001起始英雄系列 \
+					\n 002尋找世界美好的冒險者系列 \
+					\n 命中機率(不論用何種招募，機率都相同):\
+					\n 夥伴碎片(1~10個):80%\
+					\n 通常夥伴:10%\
+					\n 限定夥伴:8%\
+					\n 超稀有:2%\
+					\n\
+					\n 保底夥伴命中機率(當招募內容有保底時，該保底夥伴出現機率):\
+					\n 通常夥伴:50%\
+					\n 限定夥伴:40%\
+					\n 超稀有:10%\
+					\n\
+					\n 提供招募方式：\
+					\n 單抽 5顆奇蹟石\
+					\n 十連加一(十連) 50顆奇蹟石[保底夥伴x1]\
+					\n\
+					\n 想要招募的話，請輸入 [招募 2 招募方式]';
+					return rply;
+			  }else{
+				rply.text = '本招募無法使用' + GachaTimes +'招募喔';
+				return rply;
+				}
+		}else if(DrawPool == 3){
 			CharacterList = ['義熊','尤克特','克雷特','路卡','露','白蓮','迦羅','須藤','菲尼','托克斯'];
 			CharacterListSP.length = 0;
 			CharacterListSP = [];
@@ -195,7 +330,9 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 			rply.text = '【招募目錄】目前的招募一覽表 \
 				\n\
 				\n  0 【新手招募(首抽)】 \
-				\n  1 【通常奇蹟石招募】 \
+				\n  1 【限定招募】過往回憶的夥伴們(後篇) \
+				\n  2 【限定復刻】過往回憶的夥伴們(前篇) \
+				\n  3 【通常招募】通常奇蹟石招募 \
 				\n\
 				\n 如果想看詳細招募內容，請輸入 [招募 招募編號]';
 				return rply;
@@ -207,7 +344,9 @@ var rply ={type : 'text'}; //type是必需的,但可以更改
 				\n【招募目錄】目前的招募一覽表 \
 				\n\
 				\n  0 【新手招募(首抽)】 \
-				\n  1 【通常奇蹟石招募】 \
+				\n  1 【限定招募】過往回憶的夥伴們(後篇) \
+				\n  2 【限定復刻】過往回憶的夥伴們(前篇) \
+				\n  3 【通常招募】通常奇蹟石招募 \
 				\n\
 				\n 如果想看詳細招募內容，請輸入 [招募 招募編號]';
 				return rply;
