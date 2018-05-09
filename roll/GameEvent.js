@@ -40,7 +40,7 @@ function main(EventN,EventStoryN) {
 			\n 初次通關獎勵:奇蹟石x5\
 			\n 故事:\
 			\n 成功安撫莎拉之後，發現她已經拿到離開的關鍵物品了！\
-			\n 但是在要離開沙漠之時，他們遇見了那個人...\';
+			\n 但是在要離開沙漠之時，他們遇見了那個人...';
 
 		}else if(EventStoryN == '3'||EventStoryN == '第三話'){
 
